@@ -47,12 +47,14 @@ def right_rotate(y):
 
     return x
 
+#Task 2
 def min_value_node(node):
     current = node
     while current.left is not None:
         current = current.left
     return current
 
+#Task 1
 def max_value_node(node):
     current = node
     while current.right is not None:
