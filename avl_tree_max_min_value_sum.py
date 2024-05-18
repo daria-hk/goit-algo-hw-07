@@ -135,9 +135,15 @@ def delete_node(root, key):
 
     return root
 
+#Task 3
+def sum_of_tree(node):
+    if node is None:
+        return 0
+    return node.key + sum_of_tree(node.left) + sum_of_tree(node.right)
+
 # Driver program to test the above functions
 root = None
-keys = [10, 20, 30, 25, 28, 27, -1]
+keys = [10, 20, 30, 25, 28, 27, -2]
 
 for key in keys:
     root = insert(root, key)
@@ -146,7 +152,7 @@ for key in keys:
     print(root)
 
 # Delete
-keys_to_delete = [10, 30]
+keys_to_delete = [20, 30, -2]
 for key in keys_to_delete:
     root = delete_node(root, key)
     print("Delete:", key)
@@ -154,4 +160,10 @@ for key in keys_to_delete:
     print(root)
 
 max_node = max_value_node(root)
-print("Max key:", max_node.key)
+print("Max value:", max_node.key)
+
+min_node = min_value_node(root)
+print("Min value:", min_node.key)
+
+sum = sum_of_tree(root)
+print("Sum of values:", sum)
